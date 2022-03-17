@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :customers
+  
   namespace :admin do
     get 'homes/top'
   end
 
-  namespace :admin do
-    resources :sessions,only: [:new,:create,:destroy]
-  end
+  # namespace :admin do
+  #   resources :sessions,only: [:new,:create,:destroy]
+  # end
 
   namespace :admin do
     resources :items,except: [:destroy]
